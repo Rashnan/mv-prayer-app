@@ -38,6 +38,9 @@ importers:
       expo-status-bar:
         specifier: ~57.0.1
         version: 57.0.1(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(react@19.2.3)
+      expo-system-ui:
+        specifier: ~57.0.4
+        version: 57.0.4(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(supports-color@8.0.0)
       heroui-native:
         specifier: ^1.0.10
         version: 1.0.10(dac693a5213929ae88dbb224e2792013)
@@ -2159,6 +2162,16 @@ packages:
       expo-font: '*'
       react: '*'
       react-native: '*'
+
+  expo-system-ui@57.0.4:
+    resolution: {integrity: sha512-z//rxQJzhTNA1PcKrUtWmrd21jAS3nEDu1b0n8B/7LTTR933OcsZYP1HnbaZifuo2ZH/h7nce2Ow61WZ1Ig2bg==}
+    peerDependencies:
+      expo: '*'
+      react-native: '*'
+      react-native-web: '*'
+    peerDependenciesMeta:
+      react-native-web:
+        optional: true
 
   expo@57.0.24:
     resolution: {integrity: sha512-LxSnKMv7en/w4XDNxW3VOx7SbtQ2Bs4MyGhtoZCToDsEsBPO7pJXlv5GnQUCd7Wi8118QV/VDwsDLBKTB3Z3iQ==}
@@ -6825,6 +6838,15 @@ snapshots:
       react: 19.2.3
       react-native: 0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0)
       sf-symbols-typescript: 2.2.0
+
+  expo-system-ui@57.0.4(expo@57.0.24)(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(supports-color@8.0.0):
+    dependencies:
+      '@react-native/normalize-colors': 0.86.3
+      debug: 4.4.3(supports-color@8.0.0)
+      expo: 57.0.24(@babel/core@7.29.7(supports-color@8.0.0))(@expo/dom-webview@57.0.1)(@expo/metro-runtime@57.0.16)(expo-router@57.0.22)(react-dom@19.2.3(react@19.2.3))(react-native-worklets@0.10.1(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(react@19.2.3)(supports-color@8.0.0))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(react@19.2.3)(supports-color@8.0.0)(typescript@6.0.3)
+      react-native: 0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0)
+    transitivePeerDependencies:
+      - supports-color
 
   expo@57.0.24(@babel/core@7.29.7(supports-color@8.0.0))(@expo/dom-webview@57.0.1)(@expo/metro-runtime@57.0.16)(expo-router@57.0.22)(react-dom@19.2.3(react@19.2.3))(react-native-worklets@0.10.1(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(react@19.2.3)(supports-color@8.0.0))(react-native@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(@react-native/metro-config@0.86.3(@babel/core@7.29.7(supports-color@8.0.0))(supports-color@8.0.0))(@types/react@19.2.18)(react@19.2.3)(supports-color@8.0.0))(react@19.2.3)(supports-color@8.0.0)(typescript@6.0.3):
     dependencies:
