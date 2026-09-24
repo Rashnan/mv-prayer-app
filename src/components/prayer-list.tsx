@@ -1,3 +1,4 @@
+import { Fragment } from "react";
 import { ListGroup, Separator } from "heroui-native";
 import { Text, View } from "react-native";
 
@@ -17,19 +18,19 @@ export function PrayerList({
         <TimeCard label="Sunrise" time={schedule.sunrise} />
         <TimeCard label="Sunset" time={schedule.sunset} />
       </View>
-      <ListGroup className="bg-surface" variant="transparent">
+      <ListGroup className="overflow-hidden rounded-2xl bg-background" variant="transparent">
         {schedule.prayers.map((prayer, index) => {
           const upcoming = prayer.name === nextPrayerName;
           return (
-            <View key={prayer.name}>
-              <ListGroup.Item className={upcoming ? "rounded-xl bg-emerald-100" : ""}>
+            <Fragment key={prayer.name}>
+              <ListGroup.Item className={upcoming ? "bg-emerald-800" : ""}>
                 <ListGroup.ItemContent>
-                  <ListGroup.ItemTitle className={upcoming ? "text-emerald-800" : ""}>
+                  <ListGroup.ItemTitle className={upcoming ? "text-slate-200" : ""}>
                     {prayer.name} <Text className="text-muted-foreground">{prayer.arabic}</Text>
                   </ListGroup.ItemTitle>
                 </ListGroup.ItemContent>
                 <ListGroup.ItemDescription
-                  className={upcoming ? "font-bold text-emerald-800" : "font-bold"}
+                  className={upcoming ? "font-bold text-slate-200" : "font-bold"}
                 >
                   {prayer.time}
                 </ListGroup.ItemDescription>
@@ -39,7 +40,7 @@ export function PrayerList({
                 schedule.prayers[index + 1].name !== nextPrayerName && (
                   <Separator className="mx-4" />
                 )}
-            </View>
+            </Fragment>
           );
         })}
       </ListGroup>

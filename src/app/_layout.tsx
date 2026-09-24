@@ -1,4 +1,4 @@
-import { NativeTabs } from "expo-router/unstable-native-tabs";
+import { Stack } from "expo-router";
 import { SQLiteProvider } from "expo-sqlite";
 import { HeroUINativeProvider } from "heroui-native";
 import type { JSX } from "react";
@@ -23,16 +23,7 @@ export default function RootLayout(): JSX.Element {
               assetSource={{ assetId: require("../../assets/db/salat.db") }}
             >
               <IslandProvider>
-                <NativeTabs
-                  tintColor="#006044"
-                  indicatorColor={"#d0fae5"}
-                  backgroundColor="#ffffff"
-                >
-                  <NativeTabs.Trigger name="index">
-                    <NativeTabs.Trigger.Label>Home</NativeTabs.Trigger.Label>
-                    <NativeTabs.Trigger.Icon sf="house.fill" md="home" />
-                  </NativeTabs.Trigger>
-                </NativeTabs>
+                <Stack screenOptions={{ headerShown: false }} />
               </IslandProvider>
             </SQLiteProvider>
           </BottomSheetModalProvider>

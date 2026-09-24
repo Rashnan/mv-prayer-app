@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
+  <title id="title">Crescent moon above a mosque</title>
+  <rect width="512" height="512" rx="112" fill="#065f46"/>
+  <circle cx="330" cy="145" r="57" fill="#d1fae5"/>
+  <circle cx="357" cy="119" r="57" fill="#065f46"/>
+  <path d="M80 432V276h42v-20c-18-10-27-24-27-42 0-23 21-41 43-65 22 24 43 42 43 65 0 18-9 32-27 42v20h42v156Z" fill="#8eb4a3"/>
+  <path d="M316 432V250h30v-17c-16-10-24-24-24-41 0-23 20-41 39-64 20 23 40 41 40 64 0 17-8 31-24 41v17h30v182Z" fill="#8eb4a3"/>
+  <path d="M147 432V330c0-66 43-113 109-134 66 21 109 68 109 134v102Z" fill="#d1fae5"/>
+  <path d="M256 196v-28" fill="none" stroke="#d1fae5" stroke-linecap="round" stroke-width="9"/>
+  <path d="M216 432v-64a40 40 0 0 1 80 0v64ZM168 394v-39a17 17 0 0 1 34 0v39ZM310 394v-39a17 17 0 0 1 34 0v39Z" fill="#065f46"/>
+  <path d="M64 432h384" fill="none" stroke="#d1fae5" stroke-linecap="round" stroke-width="12"/>
+</svg>

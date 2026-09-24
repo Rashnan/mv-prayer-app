@@ -27,7 +27,7 @@ export function DayList({
           <Text className="font-semibold text-emerald-800">Today</Text>
         </Pressable>
       </View>
-      <View className="flex-row justify-evenly gap-2">
+      <View className="flex-row gap-2">
         {days.map((date) => {
           const selected = date.isSame(selectedDate, "day");
           return (
@@ -36,7 +36,7 @@ export function DayList({
               onPress={() => onSelect(date)}
               accessibilityRole="button"
               accessibilityState={{ selected }}
-              className={`gap-1 rounded-full p-1 pt-2 ${selected ? "bg-emerald-700" : "bg-surface"}`}
+              className={`flex-1 items-center gap-1 rounded-xl p-1 ${selected ? "bg-emerald-700" : "bg-surface"}`}
             >
               <Text className={`text-center ${selected ? "text-slate-200" : ""}`}>
                 {date.format("ddd").toUpperCase()}
