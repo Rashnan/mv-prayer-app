@@ -42,3 +42,7 @@ You can start developing by editing the files inside the **src/app** directory. 
 - [Expo documentation](https://docs.expo.dev/) — Expo fundamentals and guides
 - [Uniwind documentation](https://docs.uniwind.dev) — Tailwind for React Native
 - [Expo Router](https://docs.expo.dev/router/introduction) — file-based routing
+
+# Prayer times data
+
+The app bundles `assets/db/salat.db` from [Rashnan/mv-prayer-db](https://github.com/Rashnan/mv-prayer-db), commit `87a12e632a73272d61d6e902da6b1b37b5436aeb`. The home screen reads the selected island through Expo SQLite and defaults to Malé (`IslandId = 102`). Times are stored as minutes after midnight and adjusted by the island's `Minutes` offset. The database provides one schedule per month and day, reused across years.
