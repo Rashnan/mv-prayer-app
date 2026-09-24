@@ -30,13 +30,6 @@ function MosqueArtwork() {
           opacity={0.42}
         />
         <Path d="M69 170v-39c0-32 20-52 48-59 28 7 48 27 48 59v39Z" fill="#8eb4a3" opacity={0.47} />
-        <Path
-          d="M116 72V59m-8 3h17"
-          stroke="#8eb4a3"
-          strokeWidth={3}
-          strokeLinecap="round"
-          opacity={0.55}
-        />
         <Rect x="76" y="132" width="82" height="38" fill="#8eb4a3" opacity={0.47} />
         <Path
           d="M105 170v-25a12 12 0 0 1 24 0v25M83 158v-14a7 7 0 0 1 14 0v14M138 158v-14a7 7 0 0 1 14 0v14"
@@ -150,7 +143,7 @@ function PrayerList({
   nextPrayerName?: string;
 }) {
   return (
-    <View className="gap-4">
+    <View className="gap-2">
       <View className="flex-row justify-evenly gap-4">
         <TimeCard label="Sunrise" time={schedule.sunrise} />
         <TimeCard label="Sunset" time={schedule.sunset} />
@@ -209,7 +202,7 @@ export default function HomeScreen(): JSX.Element {
           <IslandSelect />
           {next && <NextPrayerCard prayer={next} countdown={countdown} />}
         </View>
-        <View className="gap-2">
+        <View className="gap-4">
           <DayList today={now} selectedDate={selectedDate} onSelect={setSelectedDate} />
           {error ? (
             <Text className="text-red-700">{error}</Text>

@@ -3,6 +3,14 @@
 
 @import "heroui-native/styles";
 
+@layer theme {
+  :root {
+    @variant light {
+      --background: #f1f5f9;
+    }
+  }
+}
+
 /* End-user path: heroui-native lives in the project's node_modules, one
    level up from this src/global.css file. */
 @source '../node_modules/heroui-native/lib';
