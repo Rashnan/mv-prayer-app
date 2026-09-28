@@ -1,6 +1,6 @@
 {
   "expo": {
-    "name": "mv-prayer-app",
+    "name": "Mv Prayer App",
     "slug": "mv-prayer-app",
     "version": "1.0.0",
     "orientation": "portrait",
@@ -14,7 +14,7 @@
       "package": "com.rashnan.mvprayerapp",
       "adaptiveIcon": {
         "foregroundImage": "./assets/images/adaptive-icon.png",
-        "backgroundColor": "#ffffff"
+        "backgroundColor": "#065f46"
       },
       "predictiveBackGestureEnabled": false
     },
@@ -25,7 +25,7 @@
         {
           "image": "./assets/images/splash-icon.png",
           "resizeMode": "contain",
-          "backgroundColor": "#ffffff"
+          "backgroundColor": "#065f46"
         }
       ],
       "expo-status-bar",

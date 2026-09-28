@@ -1,12 +1,106 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-labelledby="title">
-  <title id="title">Crescent moon above a mosque</title>
-  <rect width="512" height="512" rx="112" fill="#065f46"/>
-  <circle cx="330" cy="145" r="57" fill="#d1fae5"/>
-  <circle cx="357" cy="119" r="57" fill="#065f46"/>
-  <path d="M80 432V276h42v-20c-18-10-27-24-27-42 0-23 21-41 43-65 22 24 43 42 43 65 0 18-9 32-27 42v20h42v156Z" fill="#8eb4a3"/>
-  <path d="M316 432V250h30v-17c-16-10-24-24-24-41 0-23 20-41 39-64 20 23 40 41 40 64 0 17-8 31-24 41v17h30v182Z" fill="#8eb4a3"/>
-  <path d="M147 432V330c0-66 43-113 109-134 66 21 109 68 109 134v102Z" fill="#d1fae5"/>
-  <path d="M256 196v-28" fill="none" stroke="#d1fae5" stroke-linecap="round" stroke-width="9"/>
-  <path d="M216 432v-64a40 40 0 0 1 80 0v64ZM168 394v-39a17 17 0 0 1 34 0v39ZM310 394v-39a17 17 0 0 1 34 0v39Z" fill="#065f46"/>
-  <path d="M64 432h384" fill="none" stroke="#d1fae5" stroke-linecap="round" stroke-width="12"/>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   viewBox="0 0 512 512"
+   role="img"
+   aria-labelledby="title"
+   version="1.1"
+   id="svg8"
+   sodipodi:docname="prayer-icon.svg"
+   inkscape:version="1.4.4 (dcaf3e7d9e, 2026-05-05)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview8"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:zoom="0.77929685"
+     inkscape:cx="45.553886"
+     inkscape:cy="28.230577"
+     inkscape:window-width="1920"
+     inkscape:window-height="1009"
+     inkscape:window-x="0"
+     inkscape:window-y="0"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg8" />
+  <title
+     id="title">Crescent moon above a mosque</title>
+  <defs
+     id="defs2">
+    <mask
+       id="crescent">
+      <circle
+         cx="256"
+         cy="115"
+         r="43"
+         fill="#fff"
+         id="circle1" />
+      <circle
+         cx="256"
+         cy="85"
+         r="43"
+         fill="#000"
+         id="circle2" />
+    </mask>
+  </defs>
+  <rect
+     width="512"
+     height="512"
+     rx="112"
+     fill="#065f46"
+     id="rect2" />
+  <g
+     id="artwork"
+     transform="translate(0,-5)">
+  <g
+     transform="rotate(90,257.00752,127.99248)"
+     id="g3">
+    <circle
+       cx="256"
+       cy="115"
+       r="43"
+       fill="#d1fae5"
+       mask="url(#crescent)"
+       id="circle3" />
+  </g>
+  <path
+     d="m 334.30979,433.33293 v -182 h 30 v -17 c -16,-10 -24,-24 -24,-41 0,-23 20,-41 39,-64 20,23 40,41 40,64 0,17 -8,31 -24,41 v 17 h 30 v 182 z"
+     fill="#d1fae5"
+     id="path4" />
+  <path
+     d="m 334.30979,433.33293 v -182 h 30 v -17 c -16,-10 -24,-24 -24,-41 0,-23 20,-41 39,-64 20,23 40,41 40,64 0,17 -8,31 -24,41 v 17 h 30 v 182 z"
+     fill="#d1fae5"
+     transform="matrix(-1,0,0,1,512,0)"
+     id="path4-6" />
+  <path
+     d="M147 432V330c0-66 43-113 109-134 66 21 109 68 109 134v102Z"
+     fill="#d1fae5"
+     id="path5" />
+  <path
+     d="M256 196v-28"
+     fill="none"
+     stroke="#d1fae5"
+     stroke-linecap="round"
+     stroke-width="9"
+     id="path6" />
+  <path
+     d="m 204.03928,417.48215 v -82.42649 c 0.008,-28.44625 23.26924,-51.50224 51.96072,-51.50224 28.69148,0 51.95276,23.05599 51.96072,51.50224 v 82.42649 z m -94.56433,-48.94073 v -50.22864 c 0,-12.09203 9.88703,-21.89453 22.08331,-21.89453 12.19627,0 22.08331,9.8025 22.08331,21.89453 v 50.22864 z m 248.88348,0 v -50.22864 c 0,-12.09203 9.88703,-21.89453 22.08331,-21.89453 12.19627,0 22.08331,9.8025 22.08331,21.89453 v 50.22864 z"
+     fill="#065f46"
+     id="path7"
+     style="stroke-width:1.29345"
+     sodipodi:nodetypes="ccsccccsssccccsccc" />
+  <path
+     d="M64 432h384"
+     fill="none"
+     stroke="#d1fae5"
+     stroke-linecap="round"
+     stroke-width="12"
+     id="path8" />
+  </g>
 </svg>

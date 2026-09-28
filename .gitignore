@@ -42,3 +42,6 @@ yarn-error.*
 # Generated native folders
 /ios
 /android
+
+# Release artifacts (large APKs are attached to GitHub Releases, not committed)
+releases/*.apk

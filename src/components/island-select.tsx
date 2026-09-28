@@ -26,13 +26,19 @@ export function IslandSelect() {
         <Text className="font-bold">{island ? islandLabel(island) : "Malé, Maldives"}</Text>
         <LucideChevronDown size={18} />
       </Pressable>
-      <BottomSheetModal ref={islandSheet} snapPoints={["70%"]} enableDynamicSizing={false}>
+      <BottomSheetModal
+        ref={islandSheet}
+        snapPoints={["70%"]}
+        enableDynamicSizing={false}
+        backgroundStyle={{ backgroundColor: "#f1f5f9" }}
+        handleIndicatorStyle={{ backgroundColor: "#94a3b8" }}
+      >
         <BottomSheetFlatList
           data={islands}
           keyExtractor={(item) => String(item.id)}
           renderItem={({ item }) => (
             <Pressable
-              className="flex-row items-center justify-between border-b border-slate-100 px-6 py-4"
+              className="flex-row items-center justify-between border-b border-slate-200 px-6 py-4"
               onPress={() => {
                 setIslandId(item.id);
                 islandSheet.current?.dismiss();
