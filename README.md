@@ -1,48 +1,108 @@
-# Welcome to your HeroUI Native app 👋
+# Mv Prayer App
 
-This is an [Expo](https://expo.dev) project preconfigured with
-[HeroUI Native](https://heroui.com/docs/native), [Uniwind](https://docs.uniwind.dev)
-(Tailwind CSS for React Native), and [Expo Router](https://docs.expo.dev/router/introduction).
+<p align="center">
+  <img src="assets/images/icon.png" width="128" alt="Mv Prayer App icon" />
+</p>
 
-## Get started
+Offline prayer times for the Maldives, island by island. Built with Expo, HeroUI Native, and Uniwind.
 
-1. Install dependencies
+The app reads a bundled SQLite database of prayer schedules and shows the times for the selected island. It defaults to Malé and works entirely offline.
 
-   ```bash
-   npm install
-   ```
+## Features
 
-2. Start the app
+- **Island schedules** — prayer times for 205 islands, selectable from a bottom sheet sorted by atoll
+- **Next prayer countdown** — a live card counting down to the upcoming prayer
+- **7-day strip** — browse the surrounding week, with a shortcut back to today
+- **Sunrise and sunset** alongside the five daily prayers
+- **Upcoming prayer highlighted** in the schedule list
+- **Offline by default** — the schedule ships in `assets/db/salat.db`, no network calls
+- **Light appearance throughout**
 
-   ```bash
-   npx expo start
-   ```
+## Tech stack
 
-In the output, you'll find options to open the app in a
+- [Expo](https://expo.dev) SDK 57, React Native 0.86, React 19
+- [Expo Router](https://docs.expo.dev/router/introduction) (stack + typed routes)
+- [HeroUI Native](https://heroui.com/docs/native) and [Uniwind](https://docs.uniwind.dev) (Tailwind CSS v4 for React Native)
+- [expo-sqlite](https://docs.expo.dev/versions/latest/sdk/sqlite/) for the bundled database
+- [dayjs](https://day.js.org), [@gorhom/bottom-sheet](https://gorhom.github.io/react-native-bottom-sheet/), [react-native-svg](https://github.com/software-mansion/react-native-svg), [lucide-react-native](https://lucide.dev)
+- TypeScript (strict), React Compiler, ESLint + Prettier, pnpm
 
-- [development build](https://docs.expo.dev/develop/development-builds/introduction/)
-- [Android emulator](https://docs.expo.dev/workflow/android-studio-emulator/)
-- [iOS simulator](https://docs.expo.dev/workflow/ios-simulator/)
-- [Expo Go](https://expo.dev/go), a limited sandbox for trying out app development with Expo
+## Requirements
 
-You can start developing by editing the files inside the **src/app** directory. This project uses [file-based routing](https://docs.expo.dev/router/introduction).
+- Node.js 20+
+- pnpm 10+
+- **Android builds:** Android SDK and a JDK between **17 and 21** (JDK 24+ fails the Android Gradle Plugin prefab step)
+- **iOS builds:** macOS with Xcode (no iOS release is published yet)
 
-## What's preconfigured
+## Getting started
 
-- **HeroUI Native** (`heroui-native`) wrapped in `HeroUINativeProvider` and `GestureHandlerRootView` in `src/app/_layout.tsx`
-- **Uniwind** + **Tailwind CSS** wired through `metro.config.js` and `src/global.css`
-- All HeroUI Native mandatory peer dependencies: `react-native-reanimated`, `react-native-gesture-handler`, `react-native-worklets`, `react-native-safe-area-context`, `react-native-svg`, `react-native-screens`
-- `@gorhom/bottom-sheet` for bottom-sheet UIs
-- TypeScript with `strict: true` and `@/*` path alias to `./src/*`
-- React Compiler enabled
+```bash
+pnpm install
+pnpm start
+```
 
-## Learn more
+Then press `a` for Android, `i` for iOS, or scan the QR code with a development build. To launch straight into Android, use `pnpm android`.
 
-- [HeroUI Native components](https://heroui.com/docs/native) — full component reference
-- [Expo documentation](https://docs.expo.dev/) — Expo fundamentals and guides
-- [Uniwind documentation](https://docs.uniwind.dev) — Tailwind for React Native
-- [Expo Router](https://docs.expo.dev/router/introduction) — file-based routing
+## Scripts
 
-# Prayer times data
+| Script                              | Description                     |
+| ----------------------------------- | ------------------------------- |
+| `pnpm start`                        | Start the Expo dev server       |
+| `pnpm android` / `pnpm ios`         | Start and open on Android / iOS |
+| `pnpm lint` / `pnpm lint:fix`       | Run ESLint                      |
+| `pnpm format` / `pnpm format:check` | Run Prettier                    |
+| `pnpm typecheck`                    | Type-check with `tsc --noEmit`  |
 
-The app bundles `assets/db/salat.db` from [Rashnan/mv-prayer-db](https://github.com/Rashnan/mv-prayer-db), commit `87a12e632a73272d61d6e902da6b1b37b5436aeb`. The home screen reads the selected island through Expo SQLite and defaults to Malé (`IslandId = 102`). Times are stored as minutes after midnight and adjusted by the island's `Minutes` offset. The database provides one schedule per month and day, reused across years.
+## Project structure
+
+```
+src/
+  app/            Expo Router screens (index + root layout)
+  components/     UI: island picker, next-prayer card, day strip, prayer list
+  lib/            Database queries and prayer-time helpers
+  providers/      Island/selection context and live clock
+assets/
+  db/salat.db     Bundled prayer-time database (~1 MB)
+  images/         App icon source and generated PNGs
+```
+
+## Prayer times data
+
+The app bundles `assets/db/salat.db`, built from [Rashnan/mv-prayer-db](https://github.com/Rashnan/mv-prayer-db) at commit `87a12e632a73272d61d6e902da6b1b37b5436aeb`.
+
+- `Island` holds each island's `CategoryId`, `Atoll`, name, coordinates, and a `Minutes` offset.
+- `PrayerTimes` stores one row per category and `MonthDay` (`MM-DD`), with each time as **minutes after midnight**. A single schedule per month/day is reused across years.
+- `Category` groups islands that share a schedule.
+
+The home screen looks up the selected island's schedule, adds the island's `Minutes` offset, and formats the times locally. The default island is Malé (`IslandId = 102`).
+
+## Building an Android APK
+
+The native `android/` folder is generated and gitignored, so create it first:
+
+```bash
+npx expo prebuild --platform android
+cd android
+JAVA_HOME=/path/to/jdk-21 ./gradlew assembleRelease
+```
+
+The APK is written to `android/app/build/outputs/apk/release/app-release.apk` (universal, all four ABIs).
+
+> The `release` build type is currently signed with the debug keystore (see `android/app/build.gradle`). Configure a production keystore before distributing outside GitHub Releases.
+
+## Releases
+
+Large binaries are not committed to git. `releases/*.apk` is gitignored, and built APKs are attached to [GitHub Releases](https://github.com/Rashnan/mv-prayer-app/releases) instead.
+
+## App icon
+
+`assets/images/prayer-icon.svg` is the source of truth. The PNGs used by Expo are generated from it:
+
+| File                | Size      | Notes                                            |
+| ------------------- | --------- | ------------------------------------------------ |
+| `icon.png`          | 1024x1024 | Full icon with rounded background                |
+| `adaptive-icon.png` | 1024x1024 | Android foreground only (transparent background) |
+| `splash-icon.png`   | 1024x1024 | Splash foreground only                           |
+| `favicon.png`       | 48x48     | Web favicon                                      |
+
+The artwork is symmetric about its centre, with the crescent centred horizontally.
